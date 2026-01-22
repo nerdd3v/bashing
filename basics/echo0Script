@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if $0; then
+    echo "this is true"
+else
+    echo "this is false"
+fi

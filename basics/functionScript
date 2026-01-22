@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+greet(){
+    i=$1
+    echo "hello $i"
+}
+echo $i
+for i in "$@"; do
+    greet $i
+done

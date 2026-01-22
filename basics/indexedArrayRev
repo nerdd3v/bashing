@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+declare -a arr
+arr=(hey bye saket 31 30)
+
+echo "${arr[@]}"

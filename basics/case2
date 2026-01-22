@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+name=$1
+
+case $name in
+    saket | sharma) echo "success";;
+    *) echo "fail";;
+esac
