@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+#touch $1
+
+#chmod +x $1
+
+#echo "#!/usr/bin/env bash" > $1
+
+#vi $1
+
+declare -a arr
+arr=($(ls))
+varStore=1
+for i in "${arr[@]}";do
+    if [[ "$1" == "$i" ]];then
+        varStore=0
+        break
+    fi
+done
+
+if (( $varStore == 0 ));then
+    echo "sorry file can't be created as it already exists"
+    exit 500
+else
+    touch $1
+    chmod +x $1
+    echo "#!/usr/bin/env bash"
+    vi $1
+fi

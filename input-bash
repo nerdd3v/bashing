@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+arr=$1
+#suppose the user gives an input as an array
+
+for((i=0; i< ${#array[@]}; i++)); do
+    echo "the content of the file as a line are:"
+
+    echo "${array[$i]}"
+done
