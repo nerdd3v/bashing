@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+
+#run
+
+congig=$(uname -a)
+
+echo $congig

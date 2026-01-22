@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+array=(hi woeld how u doin)
+
+echo "${array[1]}"

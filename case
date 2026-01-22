@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+greet(){
+    echo "hi"
+}
+
+if [[ -n $1 ]]; then
+    name=$1
+else 
+    name="saket"
+fi
+
+case "$name" in
+    s*) echo "starts with s";&
+    t$) echo "ends with t maybe";;
+    *) echo "def case";&
+esac
+
