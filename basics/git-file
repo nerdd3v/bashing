@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+echo "=== Git Repo Setup ==="
+read -p "Create NEW repo? (y/N): " -n 1 -r REPLY
+echo  # Newline
+
+read -p "Enter repo name: " REPO_NAME
+USERNAME="nerdd3v"  # Your GitHub username
+
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    # NEW REPO FLOW
+    echo "Creating new repo..."
+    git init
+    git add .
+    git commit -m "Initial commit"
+    git branch -M main  # Rename to main
+    git remote add origin https://github.com/${USERNAME}/${REPO_NAME}.git
+    
+    # Create repo on GitHub via API (needs token)
+    gh repo create ${REPO_NAME} --public --source=. --remote=origin --push || \
+    echo "Repo already exists or run: gh auth login"
+    
+    git push -u origin main
+else
+    # EXISTING REPO FLOW  
+    echo "Cloning existing repo..."
+    git clone https://github.com/${USERNAME}/${REPO_NAME}.git temp-repo
+    cd temp-repo
+    # Copy your files here or git pull
+    git add .
+    git commit -m "Updates"
+    git push origin main
+fi
+
+echo "Done! 🎉"

@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+name="saket"
+
+echo $name
+echo $undefined

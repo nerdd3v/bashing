@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+a=3
+b=4
+
+max=$((a>b ? a: b))
+
+echo $max
